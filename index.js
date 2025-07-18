@@ -23,37 +23,28 @@ async function onLoad(bot, options) {
     const Command = bot.api.Command;
     const settings = options.settings;
 
-    let cryptoMaps = {
-        symbolMap: new Map(),
-        nameMap: new Map()
-    };
-    if (settings.enableCrypto) {
-        cryptoMaps = await fetchAndBuildCryptoMaps(log, PLUGIN_OWNER_ID);
-    }
+    const cryptoMaps = await fetchAndBuildCryptoMaps(log, PLUGIN_OWNER_ID);
 
     try {
         const permissionsToRegister = [];
         const commandsToRegister = [];
 
         for (const [key, cmdData] of Object.entries(COMMANDS)) {
-            const settingKey = `enable${key.charAt(0) + key.slice(1).toLowerCase()}`;
-            if (settings[settingKey]) {
-                permissionsToRegister.push({
-                    name: cmdData.PERM,
-                    description: `Доступ к команде !${cmdData.NAME}`,
-                    owner: PLUGIN_OWNER_ID
-                });
+            permissionsToRegister.push({
+                name: cmdData.PERM,
+                description: `Доступ к команде !${cmdData.NAME}`,
+                owner: PLUGIN_OWNER_ID
+            });
 
-                const createCommand = require(commandFiles[key]);
-                let commandInstance;
+            const createCommand = require(commandFiles[key]);
+            let commandInstance;
 
-                if (key === 'CRYPTO') {
-                    commandInstance = new(createCommand(Command, settings, cryptoMaps))();
-                } else {
-                    commandInstance = new(createCommand(Command, settings))();
-                }
-                commandsToRegister.push(commandInstance);
+            if (key === 'CRYPTO') {
+                commandInstance = new(createCommand(Command, settings, cryptoMaps))();
+            } else {
+                commandInstance = new(createCommand(Command, settings))();
             }
+            commandsToRegister.push(commandInstance);
         }
 
         if (permissionsToRegister.length > 0) {
