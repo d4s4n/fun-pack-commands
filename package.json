@@ -11,11 +11,6 @@
     ],
     "icon": "party-popper",
     "settings": {
-      "enableAnime": {
-        "type": "boolean",
-        "label": "Включить или выключить команду anime",
-        "default": true
-      },
       "animeInfoMessage": {
         "type": "string",
         "label": "Аниме: Сообщение",
@@ -25,11 +20,6 @@
         "type": "string",
         "label": "Аниме: Не найдено",
         "default": "Не удалось найти аниме по запросу: {query}"
-      },
-      "enableCoinflip": {
-        "type": "boolean",
-        "label": "Включить или выключить команду coinflip",
-        "default": true
       },
       "coinflipHeads": {
         "type": "string",
@@ -41,11 +31,6 @@
         "label": "Монетка: Решка",
         "default": "Выпала решка!"
       },
-      "enableCovid": {
-        "type": "boolean",
-        "label": "Включить или выключить команду covid",
-        "default": true
-      },
       "covidSuccess": {
         "type": "string",
         "label": "COVID: Сообщение",
@@ -55,11 +40,6 @@
         "type": "string",
         "label": "COVID: Не найдено",
         "default": "Страна '{country}' не найдена."
-      },
-      "enableCrypto": {
-        "type": "boolean",
-        "label": "Включить или выключить команду crypto",
-        "default": true
       },
       "cryptoSuccessMessage": {
         "type": "string",
@@ -71,11 +51,6 @@
         "label": "Крипто: Не найдено",
         "default": "Криптовалюта '{query}' не найдена."
       },
-      "enableCurrency": {
-        "type": "boolean",
-        "label": "Включить или выключить команду currency",
-        "default": true
-      },
       "currencySuccess": {
         "type": "string",
         "label": "Валюта: Сообщение",
@@ -86,12 +61,7 @@
         "label": "Валюта: Ошибка ввода",
         "default": "Неверный формат. Пример: @currency 100 USD EUR"
       },
-	  "enableDate": {
-        "type": "boolean",
-        "label": "Включить или выключить команду date",
-        "default": true
-      },
-	  "dateWithHoliday": {
+      "dateWithHoliday": {
         "type": "string",
         "label": "Дата: С праздником",
         "default": "Сегодня {date} Праздник: {holiday}!"
@@ -101,20 +71,10 @@
         "label": "Дата: Без праздника",
         "default": "Сегодня {date} Сегодня нет особых праздников."
       },
-      "enableFact": {
-        "type": "boolean",
-        "label": "Включить или выключить команду fact",
-        "default": true
-      },
       "factMessage": {
         "type": "string",
         "label": "Факт: Сообщение",
         "default": "Факт: {fact}"
-      },
-      "enableTime": {
-        "type": "boolean",
-        "label": "Включить или выключить команду time",
-        "default": true
       },
       "timeFormat": {
         "type": "string",
@@ -125,11 +85,6 @@
         "type": "string",
         "label": "Время: Ошибка",
         "default": "Неверный формат. Укажите число от -12 до +12, например: +5 или -3."
-      },
-      "enableWeather": {
-        "type": "boolean",
-        "label": "Включить или выключить команду weather",
-        "default": true
       },
       "weatherInfoMessage": {
         "type": "string",
